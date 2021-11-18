@@ -1,0 +1,137 @@
+@import '../../../styles/variables.styl';
+
+.form-control {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-parent {
+    flex-grow: 1;
+    position: relative;
+}
+
+.form-control input {
+    transition: all 0.1s;
+}
+
+.input {
+    border: solid;
+    display: block;
+    padding: 0.625rem;
+    line-height: 1.5;
+    background-color: #ffffff;
+    color: rgb(17 24 39);
+    width: 100%;
+    border-radius: 0.5rem;
+    border-width: 1px;
+    border-color: #D1D5DB;
+    height: 2.25rem;
+    margin: 0;
+    font-weight: 600;
+    border-width: 2px;
+
+    &.input-ghost {
+        border-color: transparent;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+        &:hover::placeholder {
+            color: lighten(#111827, 5);
+        }
+
+        &::placeholder {
+            transition: color 0.25s;
+        }
+    }
+
+    &:hover:not(:focus):not(.input-ghost) {
+        border-color: darken(@border-color, 15);
+    }
+
+    &:focus, &:focus-visible {
+        outline: none;
+        border-color: $primary;
+        box-shadow: 0 0 0 3px lighten($primary, 25);
+    }
+}
+
+.card .input-ghost:not(.dark) {
+    background-color: darken($bg, 5);
+}
+
+.dark .input, .dark .card .input {
+    background-color: lighten($bg-dark, 5);
+    color: white;
+
+    &:not(.input-ghost) {
+        border-color: #545454;
+    }
+
+    &:focus, &:focus-visible {
+        outline: none;
+        border-color: darken($primary, 15);
+        box-shadow: 0 0 0 3px lighten($primary, 2);
+    }
+}
+
+.label .label-text {
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 5px;
+}
+
+.input.input-squircle {
+    border-radius: 12px;
+}
+
+.input.input-circle {
+    border-radius: 5rem;
+}
+
+.input-prepend .icon {
+    padding-right: 5px;
+    display: block;
+}
+
+.input-append .icon {
+    padding-left: 5px;
+    display: block;
+}
+
+.input-inner-prepend:not(:empty) {
+    position: absolute;
+    bottom: 2px;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+}
+
+.input-inner-prepend:not(:empty) ~ input {
+    padding-left: 28px;
+}
+
+.input-inner-append:not(:empty) {
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 5px;
+}
+
+.input-inner-append:not(:empty) ~ input {
+    padding-right: 35px;
+}
+
+.label {
+    float: left;
+}
+
+.dark .input-ghost:hover::placeholder {
+    color: darken(#dedede, 2);
+}
+
+.card .input-ghost:not(:focus) {
+    box-shadow: none;
+}

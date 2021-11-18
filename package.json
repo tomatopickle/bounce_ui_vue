@@ -5,10 +5,13 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build-library": "vue-cli-service build --target lib --name bounce_ui ./src/plugins/bounce_ui/index.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "stylus": "^0.55.0",
+    "stylus-loader": "^3.0.2",
     "vue": "^3.0.0"
   },
   "devDependencies": {

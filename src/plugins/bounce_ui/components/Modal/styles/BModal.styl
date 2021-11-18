@@ -1,0 +1,80 @@
+@import '../../../styles/variables.styl';
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 25;
+    padding: 10px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-top: 80px;
+    padding-bottom: 80px;
+
+    & .modal-content > .card {
+        box-shadow: none;
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000c2;
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+.modal-header {
+    text-align: left;
+    margin: 5px;
+    padding-left: 7px;
+
+    & h1 {
+        color: black;
+        font-size: 25px;
+        margin: 0;
+
+        .dark & {
+            color: white;
+        }
+    }
+}
+
+.modal-content {
+    padding-left: 7px;
+    margin: auto;
+}
+
+.modal-enter-active {
+    animation: modal-in 0.5s;
+}
+
+.modal-leave-active {
+    animation: modal-in 0.5s reverse;
+}
+
+@keyframes modal-in {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.modal-custom {
+    background-color: transparent;
+}

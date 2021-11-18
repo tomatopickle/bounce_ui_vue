@@ -1,0 +1,62 @@
+@import './variables.styl';
+
+html, body {
+    font-family: 'Manrope', sans-serif;
+    background-color: $bg;
+    margin: 0;
+    padding: 0;
+    transition: background-color .15s;
+}
+
+html.dark {
+    &, body {
+        background-color: $bg-dark;
+        color: white;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+button, input, textarea {
+    font-family: 'Manrope', sans-serif;
+}
+
+[class*=grid-], [class*=grid_], [class~=grid] {
+    max-width: 100%;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    display: block;
+    background: lighten($bg, 5);
+}
+
+::-webkit-scrollbar-thumb {
+    background: darken($bg, 25);
+    border-radius: 7px;
+}
+::-webkit-scrollbar-thumb:hover {
+        background: darken($bg, 50);
+    }
+.dark {
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+        display: block;
+        background: lighten($bg-dark, 5);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: lighten($bg-dark, 25);
+        border-radius: 7px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: lighten($bg-dark, 50);
+    }
+}

@@ -1,0 +1,41 @@
+@import '../../../styles/variables.styl';
+
+.nav {
+    width: 100%;
+    height: max-content;
+    padding: 5px;
+    background-color: lighten($bg, 25);
+    margin: 0;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    background-size: cover;
+    background-position: center;
+
+    h1, h2, p {
+        margin: 0;
+    }
+}
+
+.nav-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    // Some spacing for other elements
+    margin-bottom: 5px;
+}
+
+.dark .nav {
+    background-color: lighten($bg-dark, 7);
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .nav {
+        background-color: alpha(lighten($bg, 25), 0.95);
+        backdrop-filter: blur(20px);
+    }
+
+    .dark .nav {
+        background-color: alpha(lighten($bg-dark, 7), 0.95);
+        backdrop-filter: blur(20px);
+    }
+}

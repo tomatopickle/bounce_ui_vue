@@ -1,0 +1,155 @@
+@import '../../../styles/variables.styl';
+
+.b-tab {
+    background: darken($bg, 2);
+    border-radius: 9px;
+    margin: 0;
+    padding: 2px;
+    border: none;
+    outline: none;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 1fr;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.b-tab .option {
+    position: relative;
+    cursor: pointer;
+}
+
+.b-tab .option:hover {
+    background-color: lighten($bg, 0.5);
+}
+
+.b-tab .option:active input:not(:checked) + label span {
+    transform: scale(0.95);
+}
+
+.b-tab .option label {
+    position: relative;
+    display: block;
+    text-align: center;
+    background: rgba(255, 255, 255, 0);
+    font-weight: 500;
+    color: rgba(0, 0, 0, 1);
+    font-size: 14px;
+    padding: 20%;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+.b-tab .option label::before, .b-tab .option label::after {
+    content: '';
+    width: 1px;
+    position: absolute;
+    top: 14%;
+    bottom: 14%;
+    border-radius: 10px;
+    will-change: background;
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+
+.b-tab .option label::before {
+    left: 0;
+    transform: translateX(-0.5px);
+}
+
+.b-tab .option label::after {
+    right: 0;
+    transform: translateX(0.5px);
+}
+
+.b-tab .option:first-of-type {
+    grid-column: 1;
+    grid-row: 1;
+    box-shadow: none;
+}
+
+.b-tab .option:first-of-type label::before {
+    opacity: 0;
+}
+
+.b-tab .option:last-of-type label::after {
+    opacity: 0;
+}
+
+.b-tab .option input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    opacity: 0;
+}
+
+.b-tab .selection {
+    background: rgba(255, 255, 255, 1);
+    border: 0.5px solid rgba(0, 0, 0, 0.04);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border-radius: 7px;
+    grid-column: 1;
+    grid-row: 1;
+    z-index: 2;
+    will-change: transform;
+    -webkit-transition: transform 0.2s ease;
+    transition: transform 0.2s ease;
+}
+
+.b-tab .option label span {
+    display: block;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    will-change: transform;
+}
+
+.b-tab .option input:checked+label::before, .b-tab .option input:checked+label::after {
+    z-index: 1;
+}
+
+.b-tab .option input:checked+label {
+    cursor: default;
+}
+
+.b-tab .icon i, .icon span {
+    font-size: 15px;
+}
+
+.dark .b-tab {
+    .option input:checked+label::before, . .option input:checked+label::after {
+        background: lighten($bg-dark, 2);
+        z-index: 1;
+    }
+
+    & {
+        background: lighten($bg-dark, 3);
+        color: white;
+    }
+
+    .selection {
+        background: lighten($bg-dark, 17);
+    }
+
+    .option label {
+        color: white;
+    }
+
+    .option:hover {
+        background: lighten($bg-dark, 10);
+    }
+}

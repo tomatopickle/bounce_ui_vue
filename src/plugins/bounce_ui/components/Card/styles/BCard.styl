@@ -1,0 +1,130 @@
+@import '../../../styles/variables.styl';
+
+.card {
+    border-radius: 0.5rem;
+    background-color: lighten($bg, 25);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+    border: none;
+    font-weight: 500;
+    min-width: 260px;
+    max-width: 95%;
+    width: max-content;
+    text-align: left;
+    color: rgba(44, 62, 80, 1);
+    line-height: 1.7;
+    padding: 5px;
+    position: relative;
+
+    header {
+        font-size: 1.25rem;
+        font-weight: 700;
+    }
+
+    main {
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    main p {
+        margin-top: 5px;
+    }
+
+    .card-text {
+        padding: 0 15px 15px;
+        padding-bottom: 0;
+    }
+
+    .card-float {
+        position: absolute;
+        bottom: -15px;
+        right: 5px;
+    }
+
+    &.card-flat {
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    }
+
+    &.index_1 {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 10%), 0 2px 4px -1px rgb(0 0 0 / 6%);
+    }
+
+    &.index_2 {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    }
+
+    &.index_3 {
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+    }
+
+    &.index_4 {
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    }
+}
+
+.dark {
+    .card {
+        background-color: lighten($bg-dark, 10);
+        color: white;
+
+        main {
+            color: #d6d6d6;
+        }
+    }
+}
+
+.card-float + .card {
+    padding-bottom: 15px;
+    margin-bottom: 6px;
+}
+
+.card.img-card {
+    background-color: lighten($bg-dark, 10);
+    color: white;
+    background-size: cover;
+
+    .card-text, main {
+        color: #d6d6d6;
+        text-shadow: 0 0 20px black;
+    }
+}
+
+.card-squircle {
+    border-radius: 12px;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+    .card-glass {
+        background-color: alpha(lighten($bg, 25), 0.75);
+        backdrop-filter: blur(20px);
+    }
+
+    .dark .card-glass {
+        background-color: alpha(lighten($bg-dark, 10), 0.5);
+        backdrop-filter: blur(20px);
+    }
+}
+
+.card .card-loading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: inherit;
+    background-color: alpha($bg, 0.5);
+    user-select: none;
+}
+
+.dark .card .card-loading {
+    background-color: alpha($bg-dark, 0.5);
+}
+
+.card-loading div.spinner div {
+    width: 4px;
+    height: 10px;
+}
+
+.card .btn-block {
+    width: 95%;
+    margin: auto;
+    display: block;
+}
