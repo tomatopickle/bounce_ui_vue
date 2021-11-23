@@ -9,13 +9,13 @@
                 <h3>Database Info</h3>
                 <b-spacer></b-spacer>
                 <b-btn @click="sidebar = false" ghost icon
-                  ><b-icon name="close"></b-icon
+                  ><b-icon name="mdi mdi-close"></b-icon
                 ></b-btn>
               </b-flex>
             </template>
             <div>
               <b-tab v-model="tabIndex2" :tabs="tabs2"></b-tab>
-              <br>
+              <br />
               <p>
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam
                 iure quam voluptates maiores magnam, commodi quod molestiae
@@ -40,7 +40,10 @@
         </template>
         <template v-slot:actions>
           <b-btn @click="$toggleTheme()" class="mx-1" bounce ghost
-            >Toggle Theme &nbsp;<b-icon right name="brightness-6"></b-icon>
+            >Toggle Theme &nbsp;<b-icon
+              right
+              name="mdi mdi-brightness-6"
+            ></b-icon>
           </b-btn>
         </template>
       </b-nav>
@@ -63,13 +66,13 @@
               <h1>Login</h1>
               <b-spacer></b-spacer>
               <b-btn @click="modal.normal = false" ghost icon
-                ><b-icon name="close"></b-icon
+                ><b-icon name="mdi mdi-close"></b-icon
               ></b-btn>
             </b-flex>
             <p>
               <b-input ghost label="User Name" placeholder="User Name">
                 <template v-slot:inner-prepend>
-                  <b-icon name="account"></b-icon>
+                  <b-icon name="mdi mdi-account"></b-icon>
                 </template>
               </b-input>
               <b-input
@@ -80,7 +83,7 @@
                 label="Password "
               >
                 <template v-slot:inner-prepend>
-                  <b-icon name="lock"></b-icon>
+                  <b-icon name="mdi mdi-lock"></b-icon>
                 </template>
               </b-input>
             </p>
@@ -104,7 +107,7 @@
                 <b-flex class="dark"
                   ><b-spacer></b-spacer
                   ><b-btn ghost @click="modal.custom = false" icon
-                    ><b-icon name="close"></b-icon></b-btn></b-flex
+                    ><b-icon name="mdi mdi-close"></b-icon></b-btn></b-flex
               ></template>
               <h1 style="margin-top: 10%">MacOS Montrey</h1>
               <p>The calm after Big Sur</p>
@@ -112,7 +115,7 @@
                 <b-flex>
                   <b-spacer></b-spacer>
                   <b-btn glass size="medium" class="mx-1" color="primary"
-                    >Read More <b-icon right name="arrow-right"></b-icon
+                    >Read More <b-icon right name="mdi mdi-arrow-right"></b-icon
                   ></b-btn>
                 </b-flex>
               </template>
@@ -158,10 +161,10 @@
               <br />
               <template v-slot:float>
                 <b-btn class="mx-1" icon outline color="danger"
-                  ><b-icon  name="close"></b-icon
+                  ><b-icon name="mdi mdi-close"></b-icon
                 ></b-btn>
                 <b-btn class="mx-1" icon outline color="success"
-                  ><b-icon name="check"></b-icon
+                  ><b-icon name="mdi mdi-check"></b-icon
                 ></b-btn>
               </template>
             </b-card>
@@ -176,7 +179,7 @@
                 <b-flex>
                   <b-spacer></b-spacer>
                   <b-btn size="medium" class="mx-1" color="primary"
-                    >Read More <b-icon right name="arrow-right"></b-icon
+                    >Read More <b-icon right name="mdi mdi-arrow-right"></b-icon
                   ></b-btn>
                 </b-flex>
               </template>
@@ -195,7 +198,7 @@
                 <b-flex>
                   <b-spacer></b-spacer>
                   <b-btn glass size="medium" class="mx-1" color="primary"
-                    >Read More <b-icon right name="arrow-right"></b-icon
+                    >Read More <b-icon right name="mdi mdi-arrow-right"></b-icon
                   ></b-btn>
                 </b-flex>
               </template>
@@ -212,7 +215,7 @@
                 <b-flex>
                   <b-spacer></b-spacer>
                   <b-btn glass size="medium" class="mx-1" color="primary"
-                    >Read More <b-icon right name="arrow-right"></b-icon
+                    >Read More <b-icon right name="mdi mdi-arrow-right"></b-icon
                   ></b-btn>
                 </b-flex>
               </template>
@@ -222,9 +225,9 @@
             <b-card width="300px">
               <template v-slot:header>Login</template>
               <p>
-                <b-input  label="User Name" placeholder="User Name">
+                <b-input label="User Name" placeholder="User Name">
                   <template v-slot:inner-prepend>
-                    <b-icon name="account"></b-icon>
+                    <b-icon name="mdi mdi-account"></b-icon>
                   </template>
                 </b-input>
                 <b-input
@@ -235,7 +238,7 @@
                   label="Password "
                 >
                   <template v-slot:inner-prepend>
-                    <b-icon name="lock"></b-icon>
+                    <b-icon name="mdi mdi-lock"></b-icon>
                   </template>
                 </b-input>
               </p>
@@ -253,7 +256,7 @@
               <p>
                 <b-input circle ghost label="User Name" placeholder="User Name">
                   <template v-slot:inner-prepend>
-                    <b-icon name="account"></b-icon>
+                    <b-icon name="mdi mdi-account"></b-icon>
                   </template>
                 </b-input>
                 <b-input
@@ -265,7 +268,7 @@
                   placeholder="Password"
                 >
                   <template v-slot:inner-prepend>
-                    <b-icon name="lock"></b-icon>
+                    <b-icon name="mdi mdi-lock"></b-icon>
                   </template>
                 </b-input>
               </p>
@@ -320,57 +323,59 @@
         <b-btn class="mx-1" ghost color="danger">Danger</b-btn>
         <br /><br />
         <b-btn class="mx-1" icon ghost
-          ><b-icon name="brightness-6"></b-icon
+          ><b-icon name="mdi mdi-brightness-6"></b-icon
         ></b-btn>
         <b-btn class="mx-1" color="danger" icon ghost
-          ><b-icon name="delete"></b-icon
+          ><b-icon name="mdi mdi-delete"></b-icon
         ></b-btn>
         <b-btn class="mx-1" color="success" icon ghost ripple
-          ><b-icon name="content-save"></b-icon
+          ><b-icon name="mdi mdi-content-save"></b-icon
         ></b-btn>
-        <b-btn class="mx-1" circle color="primary" icon  bounce
-          ><b-icon height="25px" name="play"></b-icon
+        <b-btn class="mx-1" circle color="primary" icon bounce
+          ><b-icon size="25px" name="mdi mdi-play"></b-icon
         ></b-btn>
         <b-btn class="mx-1" color="success" icon outline
-          ><b-icon name="check"></b-icon
+          ><b-icon name="mdi mdi-check"></b-icon
         ></b-btn>
         <b-btn class="mx-1" ghost color="primary" icon
-          ><b-icon name="bluetooth"></b-icon
+          ><b-icon name="mdi mdi-bluetooth"></b-icon
         ></b-btn>
         <br /><br />
         <b-btn class="mx-1" color="primary">
           Run
-          <b-icon right name="play" fill="white"></b-icon>
+          <b-icon right name="mdi mdi-play" fill="white"></b-icon>
         </b-btn>
         <b-btn class="mx-1" color="success" ghost>
           Save
-          <b-icon left name="content-save"></b-icon>
+          <b-icon left name="mdi mdi-content-save"></b-icon>
         </b-btn>
         <b-btn class="mx-1" color="danger">
           Delete
-          <b-icon left name="delete"></b-icon>
+          <b-icon left name="mdi mdi-delete"></b-icon>
         </b-btn>
         <br /><br />
         <h1>Inputs</h1>
         <div class="w-1/2 mx-auto">
           <b-input label="You're name" placeholder="Hai">
             <template v-slot:inner-prepend>
-              <b-icon name="account"></b-icon>
+              <b-icon name="mdi mdi-account"></b-icon>
             </template>
             <template v-slot:inner-append>
-              <b-icon name="account"></b-icon>
+              <b-icon name="mdi mdi-account"></b-icon>
             </template>
             <template v-slot:append>
-              <b-icon name="account"></b-icon>
+              <b-icon name="mdi mdi-account"></b-icon>
             </template>
             <template v-slot:prepend>
-              <b-icon name="account"></b-icon>
+              <b-icon name="mdi mdi-account"></b-icon>
             </template>
           </b-input>
           <br />
-          <b-input ghost placeholder="Hai">
+          <h4>{{ text }}</h4>
+          <br />
+          <b-input v-model="text" ghost placeholder="Hai">
             <template v-slot:inner-prepend>
-              <b-icon name="magnify"></b-icon>
+              <b-icon name="mdi mdi-magnify"></b-icon>
             </template>
           </b-input>
         </div>
@@ -443,18 +448,19 @@ export default {
       },
       loading: false,
       tabs: [
-        { name: "Music", value: "music", icon: "music" },
-        { name: "Photos", value: "photo", icon: "image" },
-        { name: "Videos", value: "videos", icon: "movie" },
+        { name: "Music", value: "music", icon: "mdi mdi-music" },
+        { name: "Photos", value: "photo", icon: "mdi mdi-image" },
+        { name: "Videos", value: "videos", icon: "mdi mdi-movie" },
       ],
       tabs2: [
-        { name: "Info", value: "info", icon: "information-outline" },
-        { name: "Settings", value: "Settings", icon: "cog" },
-        { name: "Upload", value: "Upload", icon: "upload" },
+        { name: "Info", value: "info", icon: "mdi mdi-information-outline" },
+        { name: "Settings", value: "Settings", icon: "mdi mdi-cog" },
+        { name: "Upload", value: "Upload", icon: "mdi mdi-upload" },
       ],
       tabIndex: 1,
       tabIndex2: 1,
       sidebar: false,
+      text: "Test",
     };
   },
   methods: {},

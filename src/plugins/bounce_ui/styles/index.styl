@@ -1,11 +1,22 @@
 @import './variables.styl';
 
+:root {
+    --font: 'Inter';
+}
+
 html, body {
-    font-family: 'Manrope', sans-serif;
+    font-family: Inter, sans-serif;
     background-color: $bg;
     margin: 0;
     padding: 0;
-    transition: background-color .15s;
+    transition: background-color 0.15s;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    // font-family: system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    touch-action: manipulation;
 }
 
 html.dark {
@@ -22,7 +33,7 @@ html.dark {
 }
 
 button, input, textarea {
-    font-family: 'Manrope', sans-serif;
+    font-family: var(--font), sans-serif;
 }
 
 [class*=grid-], [class*=grid_], [class~=grid] {
@@ -40,9 +51,11 @@ button, input, textarea {
     background: darken($bg, 25);
     border-radius: 7px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-        background: darken($bg, 50);
-    }
+    background: darken($bg, 50);
+}
+
 .dark {
     ::-webkit-scrollbar {
         width: 5px;

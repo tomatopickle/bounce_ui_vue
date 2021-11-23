@@ -24,7 +24,6 @@
     color: rgb(17 24 39);
     width: 100%;
     border-radius: 0.5rem;
-    border-width: 1px;
     border-color: #D1D5DB;
     height: 2.25rem;
     margin: 0;
@@ -35,13 +34,17 @@
         border-color: transparent;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
-        &:hover::placeholder {
-            color: lighten(#111827, 5);
+        &:hover {
+            background-color: darken(@background-color, 1);
         }
 
-        &::placeholder {
-            transition: color 0.25s;
+        &:focus {
+            background-color: @background-color;
         }
+    }
+
+    html:not(.dark) .card &.input-ghost:hover:not(:focus) {
+        background-color: darken($bg, 10);
     }
 
     &:hover:not(:focus):not(.input-ghost) {
@@ -64,13 +67,26 @@
     color: white;
 
     &:not(.input-ghost) {
-        border-color: #545454;
+        border-color: lighten(@background-color, 12);
+    }
+
+    &:hover:not(:focus):not(.input-ghost) {
+        background-color: @background-color;
+        border-color: lighten(@background-color, 20);
+    }
+
+    &:hover {
+        background-color: darken(@background-color, 1);
+    }
+
+    &:focus {
+        background-color: @background-color;
     }
 
     &:focus, &:focus-visible {
         outline: none;
         border-color: darken($primary, 15);
-        box-shadow: 0 0 0 3px lighten($primary, 2);
+        box-shadow: 0 0 0 3px darken($primary, 5);
     }
 }
 
@@ -126,10 +142,6 @@
 
 .label {
     float: left;
-}
-
-.dark .input-ghost:hover::placeholder {
-    color: darken(#dedede, 2);
 }
 
 .card .input-ghost:not(:focus) {

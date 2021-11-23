@@ -15,7 +15,7 @@
       </label>
       <div
         v-bind:style="{
-          top: !this.label ? '24%' : '52%',
+          top: !this.label ? '8px' : '31px',
         }"
         class="input-inner-prepend"
       >
@@ -24,15 +24,15 @@
       <div
         class="input-inner-append"
         v-bind:style="{
-          top: !this.label ? '24%' : '52%',
+          top: !this.label ? '8px' : '31px',
         }"
       >
         <slot name="inner-append"></slot>
       </div>
       <input
-        v-bind:value="value"
+        v-bind:value="modelValue"
         v-on="$attrs"
-        v-on:input="$emit('input', $event.target.value)"
+        v-on:input="$emit('update:modelValue', $event.target.value)"
         :disabled="disabled"
         :placeholder="this.placeholder"
         :class="getClass"
@@ -50,6 +50,7 @@
     </div>
   </div>
 </template>
+<!-- 24% 52% -->
 <script>
 export default {
   props: {
@@ -61,7 +62,7 @@ export default {
     placeholder: String,
     size: String,
     squircle: Boolean,
-    value: String,
+    modelValue: String,
     type: String,
   },
   computed: {

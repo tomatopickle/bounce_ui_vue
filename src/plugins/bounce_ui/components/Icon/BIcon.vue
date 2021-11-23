@@ -2,7 +2,7 @@
   <span :class="getClass">
     <slot v-if="!name"></slot>
     <!-- <span v-html="getSVG" v-else></span> -->
-    <span v-else :class="`mdi mdi-${this.name}`" :style="{fontSize:this.height || ''}"></span>
+    <span v-else :class="`${this.name}`" :style="{fontSize:this.size || ''}"></span>
   </span>
 </template>
 <script>
@@ -13,7 +13,7 @@ export default {
     name: String,
     fill: String,
     color: String,
-    height: Number,
+    size: String,
   },
   computed: {
     getClass() {
@@ -24,7 +24,7 @@ export default {
       return classes;
     },
     getSVG() {
-      return `<span class="mdi mdi-${this.name}" style="font-size:${this.height || '20px'}"></span>`
+      return `<span class="mdi mdi-${this.name}" style="font-size:${this.size || '20px'}"></span>`
     },
   },
 };
