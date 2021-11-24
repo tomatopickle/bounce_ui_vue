@@ -5,7 +5,7 @@ This is a Vue implementation of Bounce UI
 ## Getting Started
 
 ```console
-# Will be coming soon
+npm i bounce-ui-vue
 ```
 
 ## Docs
