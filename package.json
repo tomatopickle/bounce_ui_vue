@@ -45,5 +45,6 @@
   "repository": "https://github.com/tomatopickle/bounce_ui_vue",
   "bugs": "https://github.com/tomatopickle/bounce_ui_vue/issues",
   "main" : "./dist/bounce_ui.common.js",
+  "homepage": "https://tomatopickle.github.io/bounce_ui_vue_docs/",
   "files": ["dist/*"]
 }
