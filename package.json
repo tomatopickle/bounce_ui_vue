@@ -1,7 +1,7 @@
 {
   "name": "bounce_ui",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -41,5 +41,9 @@
     "> 1%",
     "last 2 versions",
     "not dead"
-  ]
+  ],
+  "repository": "https://github.com/tomatopickle/bounce_ui_vue",
+  "bugs": "https://github.com/tomatopickle/bounce_ui_vue/issues",
+  "main" : "./dist/bounce_ui.common.js",
+  "files": ["dist/*"]
 }

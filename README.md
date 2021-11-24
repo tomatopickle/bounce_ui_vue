@@ -1,24 +1,13 @@
-# bounce_ui
+# Bounce UI for Vue
 
-## Project setup
-```
-yarn install
-```
+This is a Vue implementation of Bounce UI
 
-### Compiles and hot-reloads for development
-```
-yarn serve
+## Getting Started
+
+```console
+# Will be coming soon
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+## Docs
 
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Docs are available [here](https://tomatopickle.github.io/bounce_ui_vue_docs/)
