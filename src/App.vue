@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <b-app>
+    <b-app :loading="app" src="./favicon.ico" loadingText="Getting data...">
       <template v-slot:append>
         <transition name="fade" :duration="{ enter: 0, leave: 50 }">
           <b-sidebar width="400px" v-show="sidebar">
@@ -413,7 +413,7 @@
               :tabs="tabs"
             >
               <template v-slot:0>
-                <p>Your music come's here</p>
+                <p>Your music come here</p>
               </template>
               <template v-slot:1>
                 <p>Your photos come here</p>
@@ -430,6 +430,56 @@
         <br /><br />
         <h1>Sidebars</h1>
         <b-btn color="primary" @click="sidebar = !sidebar">Open Sidebar</b-btn>
+        <br /><br />
+        <h1>BApp Loader</h1>
+        <b-btn color="primary" @click="app = !app">Start loading</b-btn>
+        <br /><br />
+        <h1>List</h1>
+        <b-card style="text-align: left">
+          <template v-slot:header></template>
+          <br />
+          <b-list-item>
+            <template v-slot:heading> </template>
+            <p>Yeah, life is ok ig...</p>
+          </b-list-item>
+          <b-list-item>
+            <template v-slot:heading> </template>
+            I... don't know..
+          </b-list-item>
+          <b-list-item>
+            <template v-slot:heading>Hellooo</template>
+            haii
+          </b-list-item>
+          <b-list-item>
+            <template v-slot:heading>why? </template>
+            I... don't know..
+          </b-list-item>
+        </b-card>
+        <br>
+        <b-list style="text-align: left" width="250px">
+          <template v-slot:header>Contacts</template>
+           <b-list-item clickable>
+            <b-flex>
+              <b-avatar username="Darth Vader" :size="30"></b-avatar>
+              <span>Darth Vader</span>
+            </b-flex>
+          </b-list-item>
+          <b-list-item clickable>
+            <b-flex>
+              <b-avatar username="Aman" :size="30"></b-avatar>
+              <span>Aman</span>
+            </b-flex>
+          </b-list-item>
+          <b-list-item clickable>
+            <b-flex>
+              <b-avatar username="Abaan" :size="30"></b-avatar>
+              <span>Abaan</span>
+            </b-flex>
+          </b-list-item>
+          </b-list>
+        <br /><br />
+        <h1>Avatars</h1>
+        <b-avatar username="Hola"></b-avatar>
         <br /><br /><br /><br />
       </b-container>
     </b-app>
@@ -446,6 +496,7 @@ export default {
         custom: false,
         glass: false,
       },
+      app: false,
       loading: false,
       tabs: [
         { name: "Music", value: "music", icon: "mdi mdi-music" },

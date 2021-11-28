@@ -15,7 +15,7 @@
       </label>
       <div
         v-bind:style="{
-          top: !this.label ? '8px' : '31px',
+          top: !this.label ? '8px' : '32px',
         }"
         class="input-inner-prepend"
       >
@@ -24,7 +24,7 @@
       <div
         class="input-inner-append"
         v-bind:style="{
-          top: !this.label ? '8px' : '31px',
+          top: !this.label ? '8px' : '32px',
         }"
       >
         <slot name="inner-append"></slot>
@@ -50,7 +50,6 @@
     </div>
   </div>
 </template>
-<!-- 24% 52% -->
 <script>
 export default {
   props: {

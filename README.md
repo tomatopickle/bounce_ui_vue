@@ -4,7 +4,7 @@ This is a Vue implementation of Bounce UI
 
 ## Getting Started
 
-```console
+```shell
 npm i bounce-ui-vue
 ```
 

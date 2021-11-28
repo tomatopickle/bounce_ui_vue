@@ -1,4 +1,5 @@
 import BApp from './components/App/BApp';
+import BAvatar from './components/Avatar/BAvatar';
 import BBtn from './components/Btn/BBtn';
 import BCard from './components/Card/BCard';
 import BContainer from './components/Container/BContainer';
@@ -6,6 +7,8 @@ import BDivider from './components/Divider/BDivider';
 import BIcon from './components/Icon/BIcon';
 import BInput from './components/Input/BInput';
 import BFlex from './components/Flex/BFlex';
+import BList from './components/List/BList';
+import BListItem from './components/List Item/BListItem';
 import BModal from './components/Modal/BModal'
 import BNav from './components/Nav/BNav';
 import BSidebar from './components/Sidebar/BSidebar';
@@ -18,6 +21,7 @@ import "./styles/index.styl";
 export default {
     install(app, options) {
         app.component("BApp", BApp);
+        app.component("BAvatar", BAvatar);
         app.component("BBtn", BBtn);
         app.component("BCard", BCard);
         app.component("BContainer", BContainer);
@@ -25,6 +29,8 @@ export default {
         app.component("BIcon", BIcon);
         app.component("BInput", BInput);
         app.component("BFlex", BFlex);
+        app.component("BList", BList);
+        app.component("BListItem", BListItem);
         app.component("BModal", BModal);
         app.component("BNav", BNav);
         app.component("BSidebar", BSidebar);
@@ -41,4 +47,4 @@ export default {
         }
     }
 }
-export { BApp, BBtn, BCard, BContainer, BDivider, BIcon, BInput, BFlex, BNav, BSidebar, BSpacer, BSpinner, BTab, BTabContent }
+export { BApp, BAvatar, BBtn, BCard, BContainer, BDivider, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BSidebar, BSpacer, BSpinner, BTab, BTabContent }

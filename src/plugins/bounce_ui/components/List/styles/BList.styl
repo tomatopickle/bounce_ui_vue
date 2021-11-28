@@ -1,0 +1,24 @@
+@import '../../../styles/variables.styl';
+
+.b-list {
+    background-color: lighten($bg, 25);
+    border-radius: var(--ui-radius);
+    border: solid 1px;
+    border-color: #D1D5DB;
+    display: flex;
+    flex-direction: column;
+
+    .list-content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .dark & {
+        background-color: lighten($bg-dark, 10);
+        border-color: lighten(@background-color, 12);
+    }
+
+    h3 {
+        margin: 10px;
+    }
+}

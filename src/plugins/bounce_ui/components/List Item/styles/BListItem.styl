@@ -1,0 +1,54 @@
+@import '../../../styles/variables.styl';
+
+.b-list-item {
+    &:not(.list-compact) {
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+
+    &:not(.item-last) {
+        border-bottom: solid 1px #d7d7d7;
+
+        .dark & {
+            border-bottom: solid 1px lighten($bg-dark, 25);
+        }
+    }
+
+    .list-item-content {
+        padding: 5px;
+        transition: background 0.2s;
+    }
+
+    &.item-clickable:hover .list-item-content {
+        background-color: darken($bg, 5);
+        cursor: pointer;
+    }
+
+    &.item-clickable:active .list-item-content {
+        background-color: darken($bg, 15);
+        cursor: pointer;
+    }
+
+    .dark &.item-clickable:hover .list-item-content {
+        background-color: lighten($bg-dark, 15);
+        cursor: pointer;
+    }
+
+    .dark &.item-clickable:active .list-item-content {
+        background-color: lighten($bg-dark, 12);
+        cursor: pointer;
+    }
+
+    p {
+        margin: 0;
+        margin-top: 0;
+    }
+
+    h4 {
+        margin: 0;
+    }
+
+    .flex-box {
+        padding: 0;
+    }
+}
