@@ -371,6 +371,9 @@
             </template>
           </b-input>
           <br />
+          <b-textarea v-model="text" placeholder="You're Description"></b-textarea>
+          <br />
+          <br />
           <h4>{{ text }}</h4>
           <br />
           <b-input v-model="text" ghost placeholder="Hai">
@@ -455,10 +458,10 @@
             I... don't know..
           </b-list-item>
         </b-card>
-        <br>
+        <br />
         <b-list style="text-align: left" width="250px">
           <template v-slot:header>Contacts</template>
-           <b-list-item clickable>
+          <b-list-item clickable>
             <b-flex>
               <b-avatar username="Darth Vader" :size="30"></b-avatar>
               <span>Darth Vader</span>
@@ -476,7 +479,7 @@
               <span>Abaan</span>
             </b-flex>
           </b-list-item>
-          </b-list>
+        </b-list>
         <br /><br />
         <h1>Avatars</h1>
         <b-avatar username="Hola"></b-avatar>

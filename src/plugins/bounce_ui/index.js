@@ -16,6 +16,7 @@ import BSpacer from './components/Spacer/BSpacer';
 import BSpinner from './components/Spinner/BSpinner';
 import BTab from './components/Tab/BTab';
 import BTabContent from './components/Tab Content/BTabContent';
+import BTextarea from './components/Textarea/BTextarea';
 import "./styles/animations.min.css";
 import "./styles/index.styl";
 export default {
@@ -38,6 +39,7 @@ export default {
         app.component("BSpinner", BSpinner);
         app.component("BTab", BTab);
         app.component("BTabContent", BTabContent);
+        app.component("BTextarea", BTextarea);
         app.config.globalProperties.$toggleTheme = () => {
             document.querySelector("html").classList.toggle("dark");
         };
@@ -47,4 +49,4 @@ export default {
         }
     }
 }
-export { BApp, BAvatar, BBtn, BCard, BContainer, BDivider, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BSidebar, BSpacer, BSpinner, BTab, BTabContent }
+export { BApp, BAvatar, BBtn, BCard, BContainer, BDivider, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BSidebar, BSpacer, BSpinner, BTab, BTabContent, BTextarea }
