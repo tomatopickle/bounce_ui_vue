@@ -22,7 +22,6 @@ export default {
   },
   mounted: function () {
     this.last = !this.$el.nextElementSibling;
-    console.log(this.last);
   },
   computed: {
     getClass() {
