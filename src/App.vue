@@ -121,20 +121,41 @@
               </template>
             </b-card>
           </div> </b-modal
-        ><b-modal v-model="modal.glass" width="350px">
-          <b-card glass>
-            <template v-slot:header>You Sure?</template>
-            <p>
-              If you delete all this, I'm just testing but something will happen
-              in your future!
-            </p>
-            <br />
-            <template v-slot:float>
-              <b-btn class="mx-1" @click="modal.glass = false">Cancel</b-btn>
-              <b-btn class="mx-1" @click="modal.glass = false" color="danger"
-                >Delete</b-btn
-              >
-            </template>
+        ><b-modal v-model="modal.glass" width="750px">
+          <b-card height="220px" width="750px" glass-sidebar>
+            <template #prepend
+              ><b-nav-panel v-model="panelIndex">
+                <template #header>
+                  <h4>Settings</h4>
+                </template>
+                <template #1> Account </template>
+                <template #2> Appearance </template>
+                <template #3> Security </template>
+              </b-nav-panel></template
+            >
+            <b-card bare width="100%">
+              <b-tab-content style="text-align: center" v-model="panelIndex">
+                <template v-slot:0>
+                  <h4>Account</h4>
+                  <p>This is your account settings</p>
+                </template>
+                <template v-slot:1>
+                  <p>Your photos come here</p>
+                </template>
+                <template v-slot:2>
+                  <p>Your videos come here</p>
+                </template>
+              </b-tab-content>
+              <template #footer>
+                <b-flex>
+                  <b-spacer></b-spacer>
+
+                  <b-btn class="mx-1" @click="modal.glass = false"
+                    >Cancel</b-btn
+                  >
+                </b-flex>
+              </template>
+            </b-card>
           </b-card>
         </b-modal>
         <br /><br />
@@ -371,7 +392,10 @@
             </template>
           </b-input>
           <br />
-          <b-textarea v-model="text" placeholder="You're Description"></b-textarea>
+          <b-textarea
+            v-model="text"
+            placeholder="You're Description"
+          ></b-textarea>
           <br />
           <br />
           <h4>{{ text }}</h4>
@@ -483,6 +507,25 @@
         <br /><br />
         <h1>Avatars</h1>
         <b-avatar username="Hola"></b-avatar>
+        <br /><br />
+        <h1>Navigation Panel</h1>
+        <b-card height="220px" width="500px" glass>
+          <template #prepend>
+            <b-nav-panel v-model="panelIndex">
+              <template #header>
+                <h4>Settings</h4>
+              </template>
+              <template #1> Account </template>
+              <template #2> Appearance </template>
+              <template #3> Security </template>
+            </b-nav-panel></template
+          >
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quis rem
+            sunt neque eaque at id nam voluptatum exercitationem harum maxime
+            vero nemo praesentium, ipsa mollitia dolor ad minus cum ratione.
+          </p>
+        </b-card>
         <br /><br /><br /><br />
       </b-container>
     </b-app>
@@ -513,6 +556,7 @@ export default {
       ],
       tabIndex: 1,
       tabIndex2: 1,
+      panelIndex: 1,
       sidebar: false,
       text: "Test",
     };

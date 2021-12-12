@@ -11,6 +11,7 @@ import BList from './components/List/BList';
 import BListItem from './components/List Item/BListItem';
 import BModal from './components/Modal/BModal'
 import BNav from './components/Nav/BNav';
+import BNavPanel from './components/Nav Panel/BNavPanel';
 import BSidebar from './components/Sidebar/BSidebar';
 import BSpacer from './components/Spacer/BSpacer';
 import BSpinner from './components/Spinner/BSpinner';
@@ -34,6 +35,7 @@ export default {
         app.component("BListItem", BListItem);
         app.component("BModal", BModal);
         app.component("BNav", BNav);
+        app.component("BNavPanel", BNavPanel);
         app.component("BSidebar", BSidebar);
         app.component("BSpacer", BSpacer);
         app.component("BSpinner", BSpinner);
@@ -49,4 +51,4 @@ export default {
         }
     }
 }
-export { BApp, BAvatar, BBtn, BCard, BContainer, BDivider, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BSidebar, BSpacer, BSpinner, BTab, BTabContent, BTextarea }
+export { BApp, BAvatar, BBtn, BCard, BContainer, BDivider, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BNavPanel, BSidebar, BSpacer, BSpinner, BTab, BTabContent, BTextarea }

@@ -1,0 +1,53 @@
+@import '../../../styles/variables.styl';
+
+.nav-panel {
+    width: max-content;
+    height: 100%;
+
+    h4 {
+        margin: 10px;
+    }
+
+    .controls {
+        margin-left: 20px;
+        position: relative;
+        margin-right: 10px;
+    }
+
+    .nav-panel-option {
+        user-select: none;
+        opacity: 0.7;
+        cursor: pointer;
+        margin-block: 5px;
+        padding-inline: 5px;
+        border-radius: 5px;
+        height: max-content;
+        transition: background 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+
+        &.selected {
+            opacity: 1;
+            background-color: darken($bg, 1);
+        }
+    }
+
+    .indicatorBar {
+        position: absolute;
+        height: 22px;
+        transition: all 0.2s;
+        width: 5px;
+        background-color: var(--primary);
+        left: -10px;
+        border-radius: 5px;
+        top: 7px;
+    }
+}
+
+.dark .nav-panel-option {
+    &.selected {
+        background-color: lighten($bg-dark, 15);
+    }
+}

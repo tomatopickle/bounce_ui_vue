@@ -34,6 +34,19 @@ export default {
       elem.addEventListener("change", this.updatePillPosition);
     });
   },
+  updated: function () {
+    const el = this.$el;
+    this.moveBackgroundPillToElement(
+      el.querySelectorAll(".option")[this.modelValue],
+      this.modelValue
+    );
+    el.addEventListener("change", this.updatePillPosition());
+    // Prevent pill from detaching from element when window resized
+    window.addEventListener("resize", this.updatePillPosition());
+    el.querySelectorAll(".option input").forEach((elem) => {
+      elem.addEventListener("change", this.updatePillPosition);
+    });
+  },
   methods: {
     updatePillPosition() {
       const el = this.$el;
