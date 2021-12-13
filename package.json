@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "build": "npm run build-library && npm publish",
     "lint": "vue-cli-service lint",
     "build-library": "vue-cli-service build --target lib --name bounce_ui ./src/plugins/bounce_ui/index.js"
   },
