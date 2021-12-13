@@ -40,12 +40,6 @@ export default {
       el.querySelectorAll(".option")[this.modelValue],
       this.modelValue
     );
-    el.addEventListener("change", this.updatePillPosition());
-    // Prevent pill from detaching from element when window resized
-    window.addEventListener("resize", this.updatePillPosition());
-    el.querySelectorAll(".option input").forEach((elem) => {
-      elem.addEventListener("change", this.updatePillPosition);
-    });
   },
   methods: {
     updatePillPosition() {

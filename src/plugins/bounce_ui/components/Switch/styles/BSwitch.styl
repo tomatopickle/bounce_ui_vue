@@ -1,0 +1,81 @@
+@import '../../../styles/variables.styl';
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: var(--track-width);
+    height: var(--track-height);
+    transition: transform 0.2s;
+
+    &:active {
+        transform: scale(0.9);
+    }
+
+    input {
+        display: none;
+    }
+
+    .track {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--track-color);
+        cursor: pointer;
+        border: var(--track-border-width) solid var(--track-color);
+        border-radius: var(--track-border-radius);
+        transition: 0.2s;
+
+        .handle {
+            display: flex;
+            width: var(--handle-diameter);
+            height: var(--handle-diameter);
+            background-color: var(--handle-color);
+            border-radius: var(--handle-border-radius);
+            transition: 0.2s;
+        }
+    }
+
+    input:checked+.track {
+        background-color: var(--track-active-color);
+        border: var(--track-border-width) solid var(--track-active-color);
+    }
+
+    input:focus+.track {
+        box-shadow: 0 0 1px var(--track-active-color);
+    }
+
+    input:checked+.track>.handle {
+        transform: translateX(var(--handle-distance));
+    }
+}
+
+.track .handle {
+    box-shadow: -5px 0 25px 0 rgba(255, 255, 255, 60%);
+}
+
+.dark .track .handle {
+    box-shadow: -5px 0 25px 0 rgba(0, 0, 0, 60%);
+}
+
+.toggle-slider {
+    --handle-diameter: 22px;
+    --handle-color: #fff;
+    --handle-border-radius: 50%;
+    --handle-distance: 24px;
+    --track-color: #ccc;
+    --track-width: 50px;
+    --track-height: 26px;
+    --track-active-color: #286EF1;
+    --track-border-width: 2px;
+    --track-border-radius: 34px;
+}
+
+.dark .toggle-slider {
+    --track-color: lighten($bg-dark, 15);
+}

@@ -48,7 +48,13 @@
         </template>
       </b-nav>
       <b-container>
+         <br />
+        <h1>Checkbox</h1> 
+        <b-checkbox v-model="switchIndex"  label="CheckBox"></b-checkbox>
+        <b-switch label="Switch"></b-switch>
+        {{switchIndex}}
         <br />
+        <br /> 
         <h1>Modals</h1>
         <br />
         <b-btn class="mx-1" @click="modal.normal = true" color="primary"
@@ -557,6 +563,7 @@ export default {
       tabIndex: 1,
       tabIndex2: 1,
       panelIndex: 1,
+      switchIndex : true,
       sidebar: false,
       text: "Test",
     };
