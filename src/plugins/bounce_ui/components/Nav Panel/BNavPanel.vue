@@ -1,5 +1,5 @@
 <template>
-  <div :class="getClass">
+  <div :class="getClass" :style="{width:this.width || 'auto'}">
     <b-flex vertical bare>
       <div><slot name="header"></slot></div>
       <div class="controls">
@@ -7,7 +7,7 @@
         <template v-for="(slot, slotName) in $slots" :key="slotName">
           <div
             class="nav-panel-option"
-            v-on:click="select(slotName)"
+            v-on:pointerdown="select(slotName)"
             :ref="`opt-${slotName}`"
           >
             <slot
@@ -24,7 +24,7 @@
 </template>
 <script>
 export default {
-  props: { modelValue: Number },
+  props: { modelValue: Number ,width:String},
   computed: {
     getClass() {
       return "nav-panel";

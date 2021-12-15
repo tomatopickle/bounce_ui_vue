@@ -130,7 +130,7 @@
         ><b-modal v-model="modal.glass" width="750px">
           <b-card height="220px" width="750px" glass-sidebar>
             <template #prepend
-              ><b-nav-panel v-model="panelIndex">
+              ><b-nav-panel v-model="panelIndex" width="200px">
                 <template #header>
                   <h4>Settings</h4>
                 </template>

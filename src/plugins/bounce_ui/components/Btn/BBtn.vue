@@ -21,14 +21,13 @@ export default {
     circle: Boolean,
     loading: Boolean,
     block: Boolean,
-    icon: Boolean,
+    icon: Boolean, 
     outline: Boolean,
     ghost: Boolean,
     glass: Boolean,
     ripple: Boolean,
     focusBorder: Boolean,
-    bounce: Boolean,
-    squircle: Boolean,
+    bounce: Boolean
   },
   computed: {
     getClass() {
