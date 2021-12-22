@@ -7,13 +7,10 @@
     background-color: #3C3C3C;
     color: white;
     border: none;
-    box-shadow: #242424 0 1px 1px;
 
     &.btn-primary {
       background-color: $primary;
       color: #ffffff;
-      border: none;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
       &:hover {
         background-color: darken(@background-color, 5);
@@ -31,8 +28,6 @@
     &.btn-danger {
       background-color: $danger;
       color: #ffffff;
-      border: none;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
       &:hover {
         background-color: darken(@background-color, 5);
@@ -50,8 +45,6 @@
     &.btn-success {
       background-color: $success;
       color: #ffffff;
-      border: none;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
       &:hover {
         background-color: lighten(@background-color, 5);
@@ -88,7 +81,7 @@
       background-color: #29292a;
       color: white;
       border: solid 2px;
-      border-color: #727272;
+      border-color: #484848;
 
       &:hover {
         background-color: lighten(@background-color, 5);
@@ -285,10 +278,10 @@
 
 .btn {
   position: relative;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-bottom: 8px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 8px;
   background-color: #fff;
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
   transition-duration: 50ms;
@@ -303,7 +296,6 @@
   width: max-content;
   cursor: pointer;
   border: 1px solid #c1ccd9;
-  box-shadow: #e4e7eb 0 1px 1px;
   user-select: none;
   transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
   transition-property: color, background-color, border-color;
@@ -326,8 +318,7 @@
   &.btn-primary {
     background-color: $primary;
     color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: $primary;
 
     &:hover {
       background-color: darken(@background-color, 5);
@@ -345,8 +336,7 @@
   &.btn-danger {
     background-color: $danger;
     color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: $danger;
 
     &:hover {
       background-color: darken(@background-color, 5);
@@ -364,8 +354,7 @@
   &.btn-success {
     background-color: $success;
     color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-color: $success;
 
     &:hover {
       background-color: darken(@background-color, 5);
