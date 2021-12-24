@@ -30,6 +30,11 @@
     font-weight: 600;
     border-width: 1.5px;
 
+    &.input-transparent {
+        background-color: transparent;
+        border-width: 2px;
+    }
+
     &.input-ghost {
         border-color: transparent;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -88,16 +93,16 @@
         border-color: darken($primary, 15);
         box-shadow: 0 0 0 3px darken($primary, 5);
     }
+
+    &.input-transparent {
+        background-color: transparent;
+    }
 }
 
 .label .label-text {
     font-size: 13px;
     font-weight: 600;
     margin-left: 5px;
-}
-
-.input.input-squircle {
-    border-radius: 12px;
 }
 
 .input.input-circle {

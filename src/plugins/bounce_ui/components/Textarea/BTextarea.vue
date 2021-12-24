@@ -63,8 +63,8 @@ export default {
     ghost: Boolean,
     label: String,
     placeholder: String,
+    transparent: Boolean,
     size: String,
-    squircle: Boolean,
     modelValue: String,
     type: String,
   },
@@ -74,8 +74,8 @@ export default {
         "input textarea js-autoresize " +
         (this.color ? " input-" + this.color : "") +
         (this.ghost ? " input-ghost" : "") +
-        (this.circle ? " input-circle" : "") +
-        (this.squircle ? " input-squircle" : "");
+        (this.transparent ? " input-transparent" : "") +
+        (this.circle ? " input-circle" : "");
       return classes;
     },
   },

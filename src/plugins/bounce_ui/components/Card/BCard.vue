@@ -41,7 +41,6 @@ export default {
     glass: Boolean,
     glassSidebar: Boolean,
     src: String,
-    squircle: Boolean,
   },
   computed: {
     getClass() {
@@ -51,8 +50,7 @@ export default {
         (this.color ? " card-" + this.color : "") +
         (this.src ? " img-card" : "") +
         (this.glass ? " card-glass" : "") +
-        (this.glassSidebar ? " card-glass card-glass-sidebar" : "") +
-        (this.squircle ? " card-squircle" : "");
+        (this.glassSidebar ? " card-glass card-glass-sidebar" : "");
       return classes;
     },
   },

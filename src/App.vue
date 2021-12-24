@@ -48,13 +48,13 @@
         </template>
       </b-nav>
       <b-container>
-         <br />
-        <h1>Checkbox</h1> 
-        <b-checkbox v-model="switchIndex"  label="CheckBox"></b-checkbox>
-        <b-switch label="Switch"></b-switch>
-        {{switchIndex}}
         <br />
-        <br /> 
+        <h1>Checkbox</h1>
+        <b-checkbox v-model="switchIndex" label="CheckBox"></b-checkbox>
+        <b-switch label="Switch"></b-switch>
+        {{ switchIndex }}
+        <br />
+        <br />
         <h1>Modals</h1>
         <br />
         <b-btn class="mx-1" @click="modal.normal = true" color="primary"
@@ -278,7 +278,7 @@
             </b-card>
           </div>
           <div class="col">
-            <b-card width="300px" squircle loading>
+            <b-card width="300px" loading>
               <template v-slot:header>Sign Up</template>
               <p>
                 <b-input circle ghost label="User Name" placeholder="User Name">
@@ -380,6 +380,12 @@
           Delete
           <b-icon left name="mdi mdi-delete"></b-icon>
         </b-btn>
+        <br><br>
+        <b-btn size="small">Small</b-btn>
+        <b-btn size="large">Large</b-btn>
+        <b-btn size="tiny">Tiny</b-btn>
+        <b-btn size="medium">Medium</b-btn>
+
         <br /><br />
         <h1>Inputs</h1>
         <div class="w-1/2 mx-auto">
@@ -402,6 +408,16 @@
             v-model="text"
             placeholder="You're Description"
           ></b-textarea>
+          <br>
+          <b-card class="center">
+            <b-input transparent placeholder="Name">
+          </b-input>
+          <br>
+            <b-textarea
+              transparent
+              placeholder="You're Description"
+            ></b-textarea>
+          </b-card>
           <br />
           <br />
           <h4>{{ text }}</h4>
@@ -563,7 +579,7 @@ export default {
       tabIndex: 1,
       tabIndex2: 1,
       panelIndex: 1,
-      switchIndex : true,
+      switchIndex: true,
       sidebar: false,
       text: "Test",
     };

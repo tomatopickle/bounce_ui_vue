@@ -45,7 +45,6 @@ export default {
         (this.block ? " btn-block" : "") +
         (this.loading ? " loading" : "") +
         (this.outline ? " btn-outline" : "") +
-        (this.squircle ? " btn-squircle" : "") +
         (this.circle ? " btn-circle" : "");
       return classes;
     },

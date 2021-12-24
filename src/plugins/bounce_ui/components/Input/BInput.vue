@@ -56,11 +56,11 @@ export default {
     color: String,
     circle: Boolean,
     disabled: Boolean,
+    transparent:Boolean,
     ghost: Boolean,
     label: String,
     placeholder: String,
     size: String,
-    squircle: Boolean,
     modelValue: String,
     type: String,
   },
@@ -70,8 +70,8 @@ export default {
         "input" +
         (this.color ? " input-" + this.color : "") +
         (this.ghost ? " input-ghost" : "") +
-        (this.circle ? " input-circle" : "") +
-        (this.squircle ? " input-squircle" : "");
+        (this.transparent ? " input-transparent" : "") +
+        (this.circle ? " input-circle" : "");
       return classes;
     },
   },
