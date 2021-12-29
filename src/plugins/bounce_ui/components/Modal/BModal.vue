@@ -1,6 +1,6 @@
 <template>
   <div v-show="modelValue">
-    <transition name="modal" :duration="200">
+    <transition name="modal">
       <div v-show="modelValue" :class="getClass" @click="closeFromBackdrop($event)">
         <div
           class="modal-content"
