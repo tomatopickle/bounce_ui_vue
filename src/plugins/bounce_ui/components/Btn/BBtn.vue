@@ -1,7 +1,7 @@
 <template>
   <button
     :readonly="loading"
-    :tabindex="loading ? -1 : 1"
+    :tabindex="loading ? -1 : 2"
     :data-ripple="this.ripple"
     :disabled="disabled"
     @pointerdown="handleClick($event)"
