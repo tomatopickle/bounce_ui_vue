@@ -9,6 +9,16 @@
 .input-parent {
     flex-grow: 1;
     position: relative;
+
+    .errorText {
+        width: 100%;
+        display: block;
+        text-align: left;
+        color: $danger;
+        font-size: 13px;
+        margin-top: 3px;
+        margin-left: 5px;
+    }
 }
 
 .form-control input {
@@ -91,11 +101,17 @@
     &:focus, &:focus-visible {
         outline: none;
         border-color: darken($primary, 15);
-        box-shadow: 0 0 0 3px darken($primary, 20); 
+        box-shadow: 0 0 0 3px darken($primary, 20);
     }
 
     &.input-transparent {
         background-color: transparent;
+    }
+}
+
+.dark .input-parent {
+    .errorText {
+        color: $danger-text;
     }
 }
 

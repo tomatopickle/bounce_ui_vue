@@ -165,9 +165,7 @@
           </b-card>
         </b-modal>
         <br /><br />
-        <b-form>
-          <b-input></b-input>
-        </b-form>
+        <b-input errorText="Invalid Email"></b-input>
         <h1>Cards</h1>
         <br />
         <div class="grid-4_sm-1_md-2">

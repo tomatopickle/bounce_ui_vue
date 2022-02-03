@@ -38,6 +38,9 @@
         :class="getClass"
         :type="type"
       />
+      <label class="errorText">
+        <span>{{ this.errorText }}</span>
+      </label>
     </div>
     <div
       class="input-append"
@@ -56,7 +59,8 @@ export default {
     color: String,
     circle: Boolean,
     disabled: Boolean,
-    transparent:Boolean,
+    errorText: String,
+    transparent: Boolean,
     ghost: Boolean,
     label: String,
     placeholder: String,
