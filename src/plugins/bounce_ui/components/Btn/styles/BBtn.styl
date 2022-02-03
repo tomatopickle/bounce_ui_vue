@@ -612,9 +612,10 @@
 }
 
 .btn:disabled {
+  // Some browsers might not show the not-allowed cursor
   cursor: not-allowed;
-  background-color: #b9b9b9;
-  color: #444444;
+  opacity: 0.5;
+  pointer-events: none;
 }
 
 .btn .icon i, .btn .icon span {

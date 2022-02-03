@@ -1,7 +1,7 @@
 <template>
   <button
     :readonly="loading"
-    :tabindex="loading ? -1 : 2"
+    :tabindex="loading ? -1 : tabindex || 1"
     :data-ripple="this.ripple"
     :disabled="disabled"
     @pointerdown="handleClick($event)"
@@ -17,17 +17,18 @@ export default {
   props: {
     color: String,
     disabled: Boolean,
+    tabindex: Number,
     size: String,
     circle: Boolean,
     loading: Boolean,
     block: Boolean,
-    icon: Boolean, 
+    icon: Boolean,
     outline: Boolean,
     ghost: Boolean,
     glass: Boolean,
     ripple: Boolean,
     focusBorder: Boolean,
-    bounce: Boolean
+    bounce: Boolean,
   },
   computed: {
     getClass() {
