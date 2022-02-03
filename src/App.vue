@@ -165,6 +165,9 @@
           </b-card>
         </b-modal>
         <br /><br />
+        <b-form>
+          <b-input></b-input>
+        </b-form>
         <h1>Cards</h1>
         <br />
         <div class="grid-4_sm-1_md-2">
@@ -380,7 +383,7 @@
           Delete
           <b-icon left name="mdi mdi-delete"></b-icon>
         </b-btn>
-        <br><br>
+        <br /><br />
         <b-btn size="small">Small</b-btn>
         <b-btn size="large">Large</b-btn>
         <b-btn size="tiny">Tiny</b-btn>
@@ -408,11 +411,10 @@
             v-model="text"
             placeholder="You're Description"
           ></b-textarea>
-          <br>
+          <br />
           <b-card class="center">
-            <b-input transparent placeholder="Name">
-          </b-input>
-          <br>
+            <b-input transparent placeholder="Name"> </b-input>
+            <br />
             <b-textarea
               transparent
               placeholder="You're Description"

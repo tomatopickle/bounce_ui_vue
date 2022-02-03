@@ -5,6 +5,7 @@ import BCard from './components/Card/BCard';
 import BCheckbox from './components/Checkbox/BCheckbox';
 import BContainer from './components/Container/BContainer';
 import BDivider from './components/Divider/BDivider';
+import BForm from './components/Form/BForm';
 import BIcon from './components/Icon/BIcon';
 import BInput from './components/Input/BInput';
 import BFlex from './components/Flex/BFlex';
@@ -31,6 +32,7 @@ export default {
         app.component("BCheckbox", BCheckbox);
         app.component("BContainer", BContainer);
         app.component("BDivider", BDivider);
+        app.component("BForm", BForm);
         app.component("BIcon", BIcon);
         app.component("BInput", BInput);
         app.component("BFlex", BFlex);
@@ -55,4 +57,4 @@ export default {
         }
     }
 }
-export { BApp, BAvatar, BBtn, BCard, BCheckbox, BContainer, BDivider, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BNavPanel, BSidebar, BSpacer, BSpinner, BSwitch, BTab, BTabContent, BTextarea }
+export { BApp, BAvatar, BBtn, BCard, BCheckbox, BContainer, BDivider, BForm, BIcon, BInput, BFlex, BList, BListItem, BModal, BNav, BNavPanel, BSidebar, BSpacer, BSpinner, BSwitch, BTab, BTabContent, BTextarea }
