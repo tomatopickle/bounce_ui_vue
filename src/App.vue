@@ -170,16 +170,8 @@
         <br />
         <div class="grid-4_sm-1_md-2">
           <div class="col">
-            <b-card width="300px">
-              <template v-slot:header>You Sure?</template>
-              <p>
-                If you delete all this, I'm just testing but something will
-                happen in your future!
-              </p>
-              <template v-slot:float>
-                <b-btn class="mx-1">Cancel</b-btn>
-                <b-btn class="mx-1" color="danger">Delete</b-btn>
-              </template>
+            <b-card width="300px" height="150px" overflow>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias nam ut quam, autem placeat odit a atque necessitatibus porro impedit repudiandae! Nihil necessitatibus excepturi qui iure beatae quaerat at porro.</p>
             </b-card>
           </div>
           <div class="col">

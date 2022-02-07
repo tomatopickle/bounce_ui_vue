@@ -1,8 +1,15 @@
 <template>
   <div v-show="modelValue">
     <transition name="modal">
-      <div v-show="modelValue" :class="getClass" @click="closeFromBackdrop($event)">
+      <div
+        v-show="modelValue"
+        :class="getClass"
+        @click="closeFromBackdrop($event)"
+      >
         <div
+          tabindex="-1"
+          role="dialog"
+          aria-modal="true"
           class="modal-content"
           v-bind:style="{
             width: this.getWidth(),
@@ -13,7 +20,7 @@
       </div>
     </transition>
     <transition name="modal" :duration="200">
-       <div @click="!persistent ? close() : ''" class="modal-backdrop"></div>
+      <div @click="!persistent ? close() : ''" class="modal-backdrop"></div>
     </transition>
   </div>
 </template>
@@ -22,7 +29,7 @@ export default {
   props: {
     custom: Boolean,
     persistent: Boolean,
-    modelValue:Boolean,
+    modelValue: Boolean,
     width: String,
   },
   computed: {

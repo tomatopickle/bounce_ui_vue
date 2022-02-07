@@ -1,16 +1,16 @@
 <template>
   <div
     :class="getClass"
-    v-bind:style='{
+    v-bind:style="{
       width: this.width,
       height: this.height,
       backgroundImage: `url(${this.src})`,
-    }'
+    }"
   >
     <b-flex bare>
       <slot name="prepend"></slot>
       <div style="flex-grow: 1" class="card-content">
-        <div class="card-text">
+        <div class="card-text" :class="{ 'card-overflow': overflow }">
           <header>
             <slot name="header"></slot>
           </header>
@@ -41,6 +41,7 @@ export default {
     glass: Boolean,
     glassSidebar: Boolean,
     src: String,
+    overflow: Boolean,
   },
   computed: {
     getClass() {

@@ -1,7 +1,9 @@
 <template>
-  <button
+  <component
+    :is="tag"
+    :type="type"
+    v-bind="$attrs"
     :readonly="loading"
-    :tabindex="loading ? -1 : tabindex || 1"
     :data-ripple="this.ripple"
     :disabled="disabled"
     @pointerdown="handleClick($event)"
@@ -9,7 +11,7 @@
   >
     <b-spinner v-if="loading"></b-spinner>
     <slot></slot>
-  </button>
+  </component>
 </template>
 <script>
 import rippleEffect from "./ripples";
@@ -17,7 +19,6 @@ export default {
   props: {
     color: String,
     disabled: Boolean,
-    tabindex: Number,
     size: String,
     circle: Boolean,
     loading: Boolean,
@@ -48,6 +49,20 @@ export default {
         (this.outline ? " btn-outline" : "") +
         (this.circle ? " btn-circle" : "");
       return classes;
+    },
+    tag() {
+      const attrs = this.$attrs || {};
+      if (attrs.to) {
+        return "RouterLink";
+      }
+      if (attrs.href) {
+        return "a";
+      }
+      return "button";
+    },
+    type() {
+      if (this.tag !== "button") return;
+      return this.$attrs.type || "button";
     },
   },
   methods: {
