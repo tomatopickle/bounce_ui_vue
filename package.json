@@ -1,6 +1,6 @@
 {
   "name": "bounce-ui-vue",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,6 +9,7 @@
     "build-library": "vue-cli-service build --target lib --name bounce_ui ./src/plugins/bounce_ui/index.js"
   },
   "dependencies": {
+    "ally.js": "^1.4.1",
     "core-js": "^3.6.5",
     "stylus": "^0.55.0",
     "stylus-loader": "^3.0.2",
@@ -44,7 +45,9 @@
   ],
   "repository": "https://github.com/tomatopickle/bounce_ui_vue",
   "bugs": "https://github.com/tomatopickle/bounce_ui_vue/issues",
-  "main" : "./dist/bounce_ui.common.js",
+  "main": "./dist/bounce_ui.common.js",
   "homepage": "https://tomatopickle.github.io/bounce_ui_vue_docs/",
-  "files": ["dist/*"]
+  "files": [
+    "dist/*"
+  ]
 }

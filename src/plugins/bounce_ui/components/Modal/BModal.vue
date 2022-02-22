@@ -25,6 +25,9 @@
   </div>
 </template>
 <script>
+import ally from "ally.js";
+var escHandler, focusHandler;
+var focusedElementBeforeDialogOpened, disabledHandle, tabHandle, hiddenHandle;
 export default {
   props: {
     custom: Boolean,
@@ -32,6 +35,7 @@ export default {
     modelValue: Boolean,
     width: String,
   },
+  emits: ["closed", "update:modelValue"],
   computed: {
     getClass() {
       var classes = "modal" + (this.custom ? " modal-custom" : "");
@@ -41,6 +45,7 @@ export default {
   methods: {
     close() {
       this.$emit("update:modelValue", false);
+      this.$emit("closed");
     },
     closeFromBackdrop(e) {
       if (!this.persistent && e.target.classList.contains("modal")) {
@@ -50,18 +55,58 @@ export default {
     getWidth() {
       return this.custom ? "100%" : this.width || "250px";
     },
+    modalOpened() {
+      focusedElementBeforeDialogOpened = document.activeElement;
+      const dialog = this.$el;
+      dialog.addEventListener(
+        "animationend",
+        (focusHandler = () => {
+          var element = ally.query.firstTabbable({
+            context: dialog,
+            defaultToContext: true,
+          });
+          element.focus();
+          disabledHandle = ally.maintain.disabled({
+            filter: dialog,
+          });
+
+          hiddenHandle = ally.maintain.hidden({
+            filter: dialog,
+          });
+
+          tabHandle = ally.maintain.tabFocus({
+            context: dialog,
+          });
+        })
+      );
+    },
+    modalClosed() {
+      document.body.removeEventListener("keyup", escHandler);
+      this.$el.removeEventListener("animationend", focusHandler);
+      tabHandle.disengage();
+      hiddenHandle.disengage();
+      disabledHandle.disengage();
+      focusedElementBeforeDialogOpened.focus();
+    },
   },
   mounted() {
-    var handler;
     document.body.addEventListener(
       "keyup",
-      (handler = (e) => {
+      (escHandler = (e) => {
         if (e.key == "Escape" && !this.persistent) {
           this.close();
-          document.body.removeEventListener("click", handler);
         }
       })
     );
+  },
+  watch: {
+    modelValue() {
+      if (this.modelValue) {
+        this.modalOpened();
+      } else {
+        this.modalClosed();
+      }
+    },
   },
 };
 </script>
