@@ -1,6 +1,6 @@
 {
   "name": "bounce-ui-vue",
-  "version": "0.2.17",
+  "version": "0.2.18",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -9,8 +9,8 @@
     "build-library": "vue-cli-service build --target lib --name bounce_ui ./src/plugins/bounce_ui/index.js"
   },
   "dependencies": {
-    "ally.js": "^1.4.1",
     "core-js": "^3.6.5",
+    "focus-trap": "^6.7.3",
     "stylus": "^0.55.0",
     "stylus-loader": "^3.0.2",
     "vue": "^3.0.0"

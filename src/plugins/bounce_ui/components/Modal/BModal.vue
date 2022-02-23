@@ -25,15 +25,20 @@
   </div>
 </template>
 <script>
-import ally from "ally.js";
-var escHandler, focusHandler;
-var focusedElementBeforeDialogOpened, disabledHandle, tabHandle, hiddenHandle;
+import * as focusTrap from "focus-trap";
 export default {
   props: {
     custom: Boolean,
     persistent: Boolean,
     modelValue: Boolean,
     width: String,
+  },
+  data: () => {
+    return {
+      trap: null,
+      focusHandler: null,
+      escHandler: null,
+    };
   },
   emits: ["closed", "update:modelValue"],
   computed: {
@@ -56,43 +61,28 @@ export default {
       return this.custom ? "100%" : this.width || "250px";
     },
     modalOpened() {
-      focusedElementBeforeDialogOpened = document.activeElement;
+      // focusedElementBeforeDialogOpened = document.activeElement;
+      this.trap = focusTrap.createFocusTrap(this.$el);
       const dialog = this.$el;
       dialog.addEventListener(
         "animationend",
-        (focusHandler = () => {
-          var element = ally.query.firstTabbable({
-            context: dialog,
-            defaultToContext: true,
-          });
-          element.focus();
-          disabledHandle = ally.maintain.disabled({
-            filter: dialog,
-          });
-
-          hiddenHandle = ally.maintain.hidden({
-            filter: dialog,
-          });
-
-          tabHandle = ally.maintain.tabFocus({
-            context: dialog,
-          });
+        (this.focusHandler = () => {
+          this.trap.activate();
         })
       );
     },
     modalClosed() {
-      document.body.removeEventListener("keyup", escHandler);
-      this.$el.removeEventListener("animationend", focusHandler);
-      tabHandle.disengage();
-      hiddenHandle.disengage();
-      disabledHandle.disengage();
-      focusedElementBeforeDialogOpened.focus();
+      document.body.removeEventListener("keyup", this.escHandler);
+      this.$el.removeEventListener("animationend", this.focusHandler);
+      // focusedElementBeforeDialogOpened.focus();
+      this.trap.deactivate();
+      this.trap = null;
     },
   },
   mounted() {
     document.body.addEventListener(
       "keyup",
-      (escHandler = (e) => {
+      (this.escHandler = (e) => {
         if (e.key == "Escape" && !this.persistent) {
           this.close();
         }
