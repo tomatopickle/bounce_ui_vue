@@ -6,6 +6,21 @@
     width: var(--track-width);
     height: var(--track-height);
     transition: transform 0.2s;
+    --focus-outline-offset: -4px;
+
+    &:focus-visible {
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: var(--focus-outline-offset);
+            bottom: var(--focus-outline-offset);
+            left: var(--focus-outline-offset);
+            right: var(--focus-outline-offset);
+            border-radius: 5px;
+            border: 2px solid $primary;
+        }
+    }
 
     &:active {
         transform: scale(0.9);

@@ -51,7 +51,7 @@
         <br />
         <h1>Checkbox</h1>
         <b-checkbox v-model="switchIndex" label="CheckBox"></b-checkbox>
-        <b-switch label="Switch"></b-switch>
+        <b-switch v-model="switchIndex" label="Switch"></b-switch>
         {{ switchIndex }}
         <br />
         <br />
@@ -171,7 +171,12 @@
         <div class="grid-4_sm-1_md-2">
           <div class="col">
             <b-card width="300px" height="150px" overflow>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias nam ut quam, autem placeat odit a atque necessitatibus porro impedit repudiandae! Nihil necessitatibus excepturi qui iure beatae quaerat at porro.</p>
+              <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                Molestias nam ut quam, autem placeat odit a atque necessitatibus
+                porro impedit repudiandae! Nihil necessitatibus excepturi qui
+                iure beatae quaerat at porro.
+              </p>
             </b-card>
           </div>
           <div class="col">
@@ -403,7 +408,13 @@
           ></b-textarea>
           <br />
           <b-card class="center">
-            <b-input type="number" v-model="tabIndex" transparent placeholder="Name"> </b-input>
+            <b-input
+              type="number"
+              v-model="tabIndex"
+              transparent
+              placeholder="Name"
+            >
+            </b-input>
             <br />
             <b-textarea
               transparent

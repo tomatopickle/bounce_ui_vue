@@ -1,7 +1,7 @@
 <template>
   <!--Binding css variables to use as height/width of :before -> the slider -->
   <div class="toggle-slider">
-    <label class="switch">
+    <label tabindex="0" @keydown="enterKey($event)" class="switch">
       <input v-model="isActive" type="checkbox" @click="setNewToggleState" />
       <span class="track">
         <span class="handle"></span>
@@ -22,16 +22,23 @@ export default {
     setNewToggleState() {
       this.$emit("update:modelValue", !this.isActive);
     },
+    enterKey(e) {
+      if (e.key == "Enter") {
+        this.$emit("update:modelValue", !this.isActive);
+      }
+    },
   },
   mounted() {
     this.isActive = this.modelValue;
   },
-  updated() {
-    this.isActive = this.modelValue;
+  watch: {
+    modelValue() {
+      this.isActive = this.modelValue;
+    },
   },
 };
 </script>
 
 <style lang="stylus">
-@import "./styles/BSwitch.styl";
+@import './styles/BSwitch.styl';
 </style>
