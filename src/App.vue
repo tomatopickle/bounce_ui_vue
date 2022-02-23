@@ -403,7 +403,7 @@
           ></b-textarea>
           <br />
           <b-card class="center">
-            <b-input transparent placeholder="Name"> </b-input>
+            <b-input type="number" v-model="tabIndex" transparent placeholder="Name"> </b-input>
             <br />
             <b-textarea
               transparent

@@ -34,13 +34,6 @@ export default {
       elem.addEventListener("change", this.updatePillPosition);
     });
   },
-  updated: function () {
-    const el = this.$el;
-    this.moveBackgroundPillToElement(
-      el.querySelectorAll(".option")[this.modelValue],
-      this.modelValue
-    );
-  },
   methods: {
     updatePillPosition() {
       const el = this.$el;
@@ -54,6 +47,15 @@ export default {
       el.querySelector(".selection").style.transform =
         "translateX(" + elem.offsetWidth * index + "px)";
       this.$emit("update:modelValue", index);
+    },
+  },
+  watch: {
+    modelValue() {
+      const el = this.$el;
+      this.moveBackgroundPillToElement(
+        el.querySelectorAll(".option")[this.modelValue],
+        this.modelValue
+      );
     },
   },
 };
