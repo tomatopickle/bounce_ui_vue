@@ -61,22 +61,28 @@ export default {
       return this.custom ? "100%" : this.width || "250px";
     },
     modalOpened() {
-      // focusedElementBeforeDialogOpened = document.activeElement;
-      this.trap = focusTrap.createFocusTrap(this.$el);
+      try {
+        this.trap = focusTrap.createFocusTrap(this.$el);
+      } catch (err) {
+        this.trap = false;
+      }
       const dialog = this.$el;
       dialog.addEventListener(
         "animationend",
         (this.focusHandler = () => {
-          this.trap.activate();
+          if (this.trap) {
+            this.trap.activate();
+          }
         })
       );
     },
     modalClosed() {
       document.body.removeEventListener("keyup", this.escHandler);
       this.$el.removeEventListener("animationend", this.focusHandler);
-      // focusedElementBeforeDialogOpened.focus();
-      this.trap.deactivate();
-      this.trap = null;
+      if (this.trap) {
+        this.trap.deactivate();
+        this.trap = null;
+      }
     },
   },
   mounted() {
