@@ -5,7 +5,7 @@
     border-radius: 9px;
     margin: 0;
     padding: 2px;
-    border: none;
+    border: 2px solid transparent;
     outline: none;
     display: grid;
     grid-auto-flow: column;
@@ -14,6 +14,10 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+
+    &:focus-visible {
+        border-color: var(--primary);
+    }
 }
 
 .b-tab .option {

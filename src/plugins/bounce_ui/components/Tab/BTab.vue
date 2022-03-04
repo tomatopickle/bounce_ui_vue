@@ -1,5 +1,5 @@
 <template>
-  <div class="b-tab">
+  <div class="b-tab" tabindex="0" @keyup="changeTab($event)">
     <span class="selection"></span>
     <div v-for="(tab, i) in tabs" :key="i" class="option">
       <input type="radio" :id="tab.value" name="sample" :value="tab.value" />
@@ -47,6 +47,24 @@ export default {
       el.querySelector(".selection").style.transform =
         "translateX(" + elem.offsetWidth * index + "px)";
       this.$emit("update:modelValue", index);
+    },
+    changeTab(e) {
+      console.log(e.key);
+      let index = this.modelValue;
+
+      if (e.key == "ArrowLeft") {
+        index = index != 0 ? index - 1 : this.tabs.length - 1;
+        this.moveBackgroundPillToElement(
+          this.$el.querySelectorAll(".option")[index],
+          index
+        );
+      } else if (e.key == "ArrowRight") {
+        index = index < this.tabs.length - 1 ? index + 1 : 0;
+        this.moveBackgroundPillToElement(
+          this.$el.querySelectorAll(".option")[index],
+          index
+        );
+      }
     },
   },
   watch: {

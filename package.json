@@ -1,11 +1,12 @@
 {
   "name": "bounce-ui-vue",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "npm run build-library && npm publish",
     "lint": "vue-cli-service lint",
+    "tunnel" : "lt --port 8081 --subdomain bounceuivue",
     "build-library": "vue-cli-service build --target lib --name bounce_ui ./src/plugins/bounce_ui/index.js"
   },
   "dependencies": {
