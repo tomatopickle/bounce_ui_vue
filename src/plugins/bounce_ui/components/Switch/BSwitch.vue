@@ -24,7 +24,7 @@ export default {
     },
     enterKey(e) {
       if (e.key == "Enter") {
-        this.$emit("update:modelValue", !this.isActive);
+        this.setNewToggleState();
       }
     },
   },
