@@ -96,13 +96,13 @@ export default {
     );
   },
   watch: {
-    // modelValue() {
-    //   if (this.modelValue) {
-    //     this.modalOpened();
-    //   } else {
-    //     this.modalClosed();
-    //   }
-    // },
+    modelValue() {
+      if (this.modelValue) {
+        this.modalOpened();
+      } else {
+        this.modalClosed();
+      }
+    },
   },
 };
 </script>
