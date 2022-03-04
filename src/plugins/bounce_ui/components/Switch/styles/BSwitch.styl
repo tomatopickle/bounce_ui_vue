@@ -7,19 +7,11 @@
     height: var(--track-height);
     transition: transform 0.2s;
     --focus-outline-offset: -4px;
+    border-radius: var(--ui-radius);
 
     &:focus-visible {
-        &:after {
-            content: '';
-            display: block;
-            position: absolute;
-            top: var(--focus-outline-offset);
-            bottom: var(--focus-outline-offset);
-            left: var(--focus-outline-offset);
-            right: var(--focus-outline-offset);
-            border-radius: 5px;
-            border: 2px solid $primary;
-        }
+        outline: 2px solid $primary;
+        outline-offset: 2px;
     }
 
     &:active {
