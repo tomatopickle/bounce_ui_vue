@@ -14,6 +14,12 @@
         margin-left: 20px;
         position: relative;
         margin-right: 10px;
+
+        &:focus-visible {
+            .nav-panel-option.selected {
+                outline : 2px solid $primary;
+            }
+        }
     }
 
     .nav-panel-option {
