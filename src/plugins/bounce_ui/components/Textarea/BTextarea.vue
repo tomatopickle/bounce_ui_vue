@@ -39,6 +39,7 @@
         :placeholder="this.placeholder"
         :class="getClass"
         :type="type"
+        :style="{ minHeight: this.height }"
       >
       </textarea>
     </div>
@@ -67,6 +68,8 @@ export default {
     size: String,
     modelValue: String,
     type: String,
+    noResize: Boolean,
+    height: String,
   },
   computed: {
     getClass() {
@@ -80,7 +83,9 @@ export default {
     },
   },
   mounted() {
-    setResizeListeners(this.$el, ".js-autoresize");
+    if (!this.noResize) {
+      setResizeListeners(this.$el, ".js-autoresize");
+    }
   },
 };
 </script>

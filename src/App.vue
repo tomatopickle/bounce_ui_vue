@@ -403,6 +403,8 @@
           </b-input>
           <br />
           <b-textarea
+            height="100px"
+            noResize
             v-model="text"
             placeholder="You're Description"
           ></b-textarea>
